@@ -1,0 +1,16 @@
+{
+    "name": "shahadat.zcpe/edc",
+    "description": "Easy Development command",
+    "keywords": ["development", "laravel", "commands"],
+    "license": "MIT",
+    "type": "package",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "5.5.*",
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+    },
+}
