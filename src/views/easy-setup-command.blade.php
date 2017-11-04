@@ -1,7 +1,7 @@
 
 
 <div class="column">
-    @foreach(config('edc.setup_commands') as $group => $setup_command)
+    @foreach($config['setup_commands'] as $group => $setup_command)
         <div class="box">
             <h1 class="title">{{ $setup_command['title'] }}</h1>
             <code>
@@ -24,7 +24,7 @@
 
     $('.run-setup-command').click(function(){
         var group = $(this).data('group');
-        var command_list_group = {!! json_encode( config('edc.setup_commands'), JSON_PRETTY_PRINT)  !!} ;
+        var command_list_group = {!! json_encode( $config['setup_commands'], JSON_PRETTY_PRINT)  !!} ;
 
         for(i = 0; i < command_list_group[group].commands.length; i++)
         {

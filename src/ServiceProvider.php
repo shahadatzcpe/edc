@@ -12,10 +12,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 	public function boot()
 	{
         $this->publishes([
-            __DIR__.'/config.php' => config_path('edc.php'), 'edc'
+            __DIR__.'/config.php' => config_path('edc.php')
         ]);
 
         $this->loadRoutesFrom( __DIR__ . '/routes.php');
+        
         $this->loadViewsFrom( __DIR__ . '/views', 'edc');
 	}
 
