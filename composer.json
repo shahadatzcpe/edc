@@ -6,11 +6,17 @@
     "type": "package",
     "require": {
         "php": ">=7.0.0",
-        "laravel/framework": "5.5.*"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Shahadat\\Edc\\": "src/"
+        }
+    },
+    "extra" : {
+        "laravel": {
+            "providers": [
+                "Shahadat\\Edc\\ServiceProvider"
+            ],
         }
     }
 }
