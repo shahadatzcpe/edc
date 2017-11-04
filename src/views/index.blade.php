@@ -22,6 +22,11 @@
         .wp100{
             width:100%;
         }
+        .mytitle{
+        	font-size: 48;
+        	text-align: center;
+        	margin-bottom: 20px;
+        }
     </style>
     <script>
         @stack('script.header')
@@ -30,6 +35,7 @@
 <body>
 <section class="section">
     <div class="container">
+    	<h1 class="mytitle">Easy development tools</h1>
         <div class="tabs is-centered is-boxed terminal-switch">
             <ul>
                 <li class="is-active" data-target="#raw-terminal">
