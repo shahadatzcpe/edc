@@ -30,13 +30,13 @@ return [
                 'php artisan view:clear',
                 'php artisan migrate',
             ]
-        ],
+        ]
     ],
 
     'default_executor' => 'windows',
 
     'executors' => [
-        'ubuntu' => \Edc\Executors\UbuntuCommandExecutor::class,
-        'windows' => \Edc\Executors\WindowsCommandExecutor::class,
+        'ubuntu' => \Shahadat\Edc\Executors\UbuntuCommandExecutor::class,
+        'windows'=> \Shahadat\Edc\Executors\WindowsCommandExecutor::class,
     ],
 ];

@@ -11,12 +11,14 @@ class Controller
      */
     public function index()
     {
-    	if(App::environment('production'))
+    	if(\App::environment('production'))
         {
 			return  response("App is now on production environment. You cannot run any operation using this package.");
         }
 
-       return view('edc::easy-developments-commands.index');
+       $config = config('edc') ?? require_once __DIR__. '/config.php'; 
+
+       return view('edc::index', compact('config'));
     }
 
 
@@ -25,14 +27,15 @@ class Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function runCommand(Request $request)
+    public function runCommand()
     {
-        if(App::environment('production'))
+        if(\App::environment('production'))
         {
         	return response("App is now on production environment. You cannot run any operation using this package.");
         }
 
-        $output = Terminal::execute($request->command);
+        $output = Terminal::execute(request()->command);
+
         return htmlentities($output);
     }
 }

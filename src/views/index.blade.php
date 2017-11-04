@@ -77,70 +77,70 @@
             <div id="database-command" style="display:none;" class="columns">
                 <div class="column">
                     <h1 class="title">Basic database operation</h1>
-                    @include('easy-developments-commands.check-migration-status')
-                    @include('easy-developments-commands.migrate-now')
-                    @include('easy-developments-commands.seed-database')
+                    @include('edc::database.check-migration-status')
+                    @include('edc::database.migrate-now')
+                    @include('edc::database.seed-database')
                 </div>
 
                 <div class="column">
                     <h1 class="title">Migration command</h1>
-                    @include('easy-developments-commands.run-migrateion-parameterized')
+                    @include('edc::database.run-migrateion-parameterized')
 
                     <h1 class="title">Seed command</h1>
-                    @include('easy-developments-commands.run-seed-command')
+                    @include('edc::database.run-seed-command')
                 </div>
             </div>
 
             <div id="composer-command" style="display:none;" class="columns">
                 <div class="column">
                     <h1 class="title">Composer commands</h1>
-                    @include('easy-developments-commands.composer.dump')
-                    @include('easy-developments-commands.composer.install')
-                    @include('easy-developments-commands.composer.update')
+                    @include('edc::composer.dump')
+                    @include('edc::composer.install')
+                    @include('edc::composer.update')
                 </div>
 
                 <div class="column">
                     <h1 class="title">Custom composer command</h1>
-                    @include('easy-developments-commands.composer.run')
-                    @include('easy-developments-commands.composer.require')
+                    @include('edc::composer.run')
+                    @include('edc::composer.require')
                 </div>
             </div>
 
             <div id="git-command" style="display:none;" class="columns">
                 <div class="column">
                     <h1 class="title">Basic Git Commands</h1>
-                    @include('easy-developments-commands.git.show-remote')
-                    @include('easy-developments-commands.git.fetch')
-                    @include('easy-developments-commands.git.branch')
-                    @include('easy-developments-commands.git.status')
-                    @include('easy-developments-commands.git.pull')
-                    @include('easy-developments-commands.git.checkout')
+                    @include('edc::git.show-remote')
+                    @include('edc::git.fetch')
+                    @include('edc::git.branch')
+                    @include('edc::git.status')
+                    @include('edc::git.pull')
+                    @include('edc::git.checkout')
                 </div>
 
                 <div class="column">
                     <h1 class="title">Custom Git command</h1>
-                    @include('easy-developments-commands.git.common')
-                    @include('easy-developments-commands.git.run')
+                    @include('edc::git.common')
+                    @include('edc::git.run')
                 </div>
             </div>
 
             <div id="raw-terminal"  class="columns">
                 <div class="column">
                     <h1 class="title">Raw Terminal Command</h1>
-                    @include('easy-developments-commands.raw.terminal')
+                    @include('edc::raw.terminal')
                 </div>
                 <div class="column">
                     <h1 class="title">Raw Artisan Command</h1>
-                    @include('easy-developments-commands.raw.artisan')
+                    @include('edc::raw.artisan')
                 </div>
             </div>
 
             <div id="easy-setup-command" style="display:none;" class="columns">
-                @include('easy-developments-commands.easy-setup-command')
+                @include('edc::easy-setup-command')
             </div>
 
             <div id="help" style="display:none;" class="columns">
-                @include('easy-developments-commands.help')
+                @include('edc::help')
             </div>
         </div>
 

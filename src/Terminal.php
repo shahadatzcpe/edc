@@ -1,6 +1,8 @@
 <?php
 namespace Shahadat\Edc;
 
+use Shahadat\Edc\Executors\BaseExecutor;
+
 class Terminal
 {
 
@@ -9,10 +11,22 @@ class Terminal
      *
      * @return \Edc\Executors\BaseExecutor;
      */
-    public static function instance()
+    public static function executor()
     {
-        $executor =  config('config.default_executor');  //config
-        return  config("config.executors.{$executor}")::instance();
+        $config = config('edc') ?? require_once __DIR__. '/config.php'; 
+
+        $default_executor = $config['default_executor'] ?? 'unknown';
+
+        $executor_name =  $config['executors'][$default_executor] ?? null;  
+
+        $executor = $executor_name::instance();
+
+        if(!$executor instanceof BaseExecutor)
+        {
+            throw new Exception("Error Processing Request", 1);
+        }  
+
+        return $executor;
     }
 
     /**
@@ -23,6 +37,6 @@ class Terminal
      */
     public static function execute($command)
     {
-        return static::instance()->execute($command);
+        return static::executor()->execute($command);
     }
 }
